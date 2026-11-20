@@ -1,7 +1,7 @@
 namespace GridSystem;
 
 public class GridTile(
-  int x, int y, int level, bool floor,
+  int x, int y, int height, bool hasFloor, GridLevel parentGridLevel,
   bool blockN = false,
   bool blockE = false,
   bool blockS = false,
@@ -10,12 +10,13 @@ public class GridTile(
 {
   public int X { get; set; } = x;
   public int Y { get; set; } = y;
-  public int Level { get; set; } = level;
-  public bool Floor { get; set; } = floor;
+  public int Height { get; set; } = height;
+  public bool HasFloor { get; set; } = hasFloor;
+  public GridLevel GridLevel = parentGridLevel;
 
   public bool[] Blocking { get; set; } = [blockN, blockE, blockS, blockW];
 
-  public GridTile() : this(0, 0, 1, true) { }
+  public GridTile() : this(x: 0, y: 0, height: 1, hasFloor: true, null) { }
 
   public override string ToString()
   {
