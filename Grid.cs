@@ -2,10 +2,10 @@ namespace GridSystem;
 
 public class Grid
 {
-  private readonly GridLevel[] _gridLevels = [];
+  private GridLevel[] _gridLevels = [];
 
-  public int Width { get; private set; }
-  public int Height { get; private set; }
+  public int Width { get; set; }
+  public int Height { get; set; }
 
   public GridLevel[] Levels
   {
@@ -17,9 +17,12 @@ public class Grid
       {
         value[i].LevelNum = i;
       }
+      _gridLevels = value;
     }
   }
-  
+
+  public Grid() {}
+
   public Grid(int width, int height, int levels)
   {
     Width = width;

@@ -27,6 +27,7 @@ public class GridLevel
     {
       foreach (GridTile tile in value)
       {
+        tile.GridLevel = this;
         _tiles[tile.X, tile.Y] = tile;
       }
     }

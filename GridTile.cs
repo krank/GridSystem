@@ -20,7 +20,7 @@ public class GridTile(
 
   public override string ToString()
   {
-    return $"Tile at [x:{X} y:{Y}], " +
+    return $"Tile at [fl:{GridLevel.LevelNum} x:{X} y:{Y}], " +
       "walls [" +
         $"{(Blocking[(int)Direction.North] ? "N" : "")}" +
         $"{(Blocking[(int)Direction.East] ? "E" : "")}" +
